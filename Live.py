@@ -1,5 +1,6 @@
 
 import os
+from os.path import basename
 import subprocess
 import json
 
@@ -38,10 +39,10 @@ for root, dirs, files in os.walk(DIR_NAME):
     path = root.split(os.sep)
     base_name = os.path.basename(root)
     for file in files:
-        if base_name == "":
-            FILE = f'{DIR_NAME}{base_name}'+file
+        if root == "":
+            FILE = f'{root}/'+file
         else:
-            FILE = f'{DIR_NAME}{base_name}/'+file
+            FILE = f'{root}/'+file
         FILE = File_D(FILE)
         FILES.append(FILE)
 
